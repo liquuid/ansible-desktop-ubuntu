@@ -1,12 +1,28 @@
 ---
+- name: VirtualBox | Install virtualbox repo
+  get_url: url=http://download.virtualbox.org/virtualbox/rpm/fedora/virtualbox.repo dest=/etc/yum.repos.d/virtualbox.repo
+
+- name: VirtualBox | Install virtualbox
+  dnf: name=VirtualBox disable_gpg_check=yes state=latest
 
 - name: Virtualization | Install lists packages
-  dnf: name={{ item }} state=installed
+  dnf: name={{ item }} state=latest
   with_items:
     - vagrant
-    - VirtualBox
     - libvirt-daemon-vbox
     - python-VirtualBox
     - docker-vim
     - docker-selinux
     - docker
+    - binutils
+    - gcc
+    - make
+    - patch
+    - libgomp
+    - glibc-headers
+    - glibc-devel
+    - kernel-headers
+    - kernel-devel
+    - dkms
+
+
