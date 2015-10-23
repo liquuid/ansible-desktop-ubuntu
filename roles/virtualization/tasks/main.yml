@@ -1,0 +1,12 @@
+---
+
+- name: Virtualization | Install lists packages
+  dnf: name={{ item }} state=installed
+  with_items:
+    - vagrant
+    - VirtualBox
+    - libvirt-daemon-vbox
+    - python-VirtualBox
+    - docker-vim
+    - docker-selinux
+    - docker

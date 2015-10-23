@@ -1,0 +1,18 @@
+---
+
+- name: "Launcher | Install Synapse"
+  dnf: pkg={{ item }} state=installed
+  with_items:
+    - synapse
+  notify:
+    - Start synapse
+
+- name: "Launcher | create config dir"
+  sudo: false
+  file: path=/home/{{ user }}/.config/synapse state=directory mode=0755
+
+- name: "Launcher | Set configuration of ansible_env.LOGNAME"
+  remote_user: liquuid
+  sudo: false
+  copy: src=config.json dest=/home/{{ user }}/.config/synapse/config.json owner={{ user }} mode=664
+

@@ -1,0 +1,17 @@
+---
+# List handlers for Apache2
+
+- name: Restart apache
+  service: name=httpd state=restarted
+
+- name: Graceful apache
+  service: name=httpd state=graceful
+
+- name: Start mariadb
+  service: name=mariadb state=started
+
+- name: Stop mariadb
+  service: name=mariadb state=stoped
+
+- name: Restart mariadb
+  service: name=mariadb state=restarted

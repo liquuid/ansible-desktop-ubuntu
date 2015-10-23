@@ -1,0 +1,31 @@
+---
+
+- name: PINTA | Install package
+  dnf: pkg=pinta state=present
+
+- name: Scribus | Install package
+  dnf: pkg=scribus state=present
+
+- name: Gimp | Install package
+  dnf: name={{ item }} state=installed
+  with_items:
+      - gimp
+      - gimp-elsamuko
+      - gimp-lensfun
+      - gimp-separate+
+      - gimp-resynthesizer
+      - gimp-wavelet-denoise-plugin
+      - gimp-lqr-plugin
+      - gimp-paint-studio
+      - gimp-help-pt_BR
+      - gimp-fourier-plugin
+
+
+- name: Inkscape | Install package
+  dnf: name={{ item }} state=present
+  with_items:
+      - inkscape
+      - inkscape-psd
+      - inkscape-table
+      - inkscape-sozi
+      - inkscape-view

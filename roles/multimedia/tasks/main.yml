@@ -1,0 +1,13 @@
+---
+
+- name: Package | Install lists packages
+  dnf: name={{ item }} state=installed
+  with_items:
+    - vlc
+    - transmission
+    - clementine
+    - gstreamer-plugins-bad-free-extras
+    - gstreamer-plugins-bad-nonfree
+    - gstreamer-plugins-bad-free
+    - gstreamer-plugins-ugly
+    - pitivi
