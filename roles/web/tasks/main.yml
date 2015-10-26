@@ -85,3 +85,6 @@
 
 - name: Phpmyadmin | Add symlink for phpmyadmin
   file: src=/usr/share/phpMyAdmin dest=/var/www/phpmyadmin state=link
+
+- name: Install WP-CLI
+    get_url: url="{{ phar_url }}" dest="{{ bin_path }}" mode=0755
