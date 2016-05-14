@@ -1,0 +1,32 @@
+---
+
+- name: Android | Install required packages.
+  action: dnf pkg={{ item }} state=installed
+  with_items:
+    - java-1.8.0-openjdk-devel
+    - zlib-devel.i686
+    - ncurses-devel.i686
+    - ant
+    # libs for mksdcard SDK Tool
+    - compat-libstdc++-296.i686
+    - compat-libstdc++-33.i686
+    - compat-libstdc++-33.x86_64
+    - glibc.i686
+    - glibc-devel.i686
+    - libstdc++.i686
+    - libX11-devel.i686
+    - libXrender.i686
+    - libXrandr.i686
+
+- name: Downloading Android Studio
+  get_url: url='https://dl.google.com/dl/android/studio/ide-zips/2.1.1.0/android-studio-ide-143.2821654-linux.zip' dest="/tmp/as.zip" mode=0755
+
+- name: Unarchiving Android Studio
+  unarchive: src="/tmp/as.zip" dest="/opt/" copy=no owner={{user}}
+
+- name: Configure command line path
+  template: src=android_studio.sh dest=/etc/profile.d/android_studio.sh mode=0755 owner=root
+
+- name: Install Launcher
+  template: src=android-studio.desktop dest=/usr/share/applications/android-studio.desktop mode=0755 owner=root
+

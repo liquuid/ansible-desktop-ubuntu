@@ -19,11 +19,12 @@
     - composer
 #    - nodejs
 #    - dotfile
-    - conky
-    - synapse      # Launcher apps.
+#    - conky
+#    - synapse      # Launcher apps.
     - google-chrome
     - multimedia
     - atom
     - virtualization
     - skype
     - dropbox
+#   - android
