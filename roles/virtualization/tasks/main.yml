@@ -26,4 +26,9 @@
       - dkms
     state: latest
 
+- name: Enable docker
+  service:
+    name: docker
+    state: started
+    enabled: yes
 
