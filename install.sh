@@ -1,2 +1,2 @@
-sudo dnf install ansible python2-dnf
-ansible-playbook -i hosts workstation.yml -c local -K
+sudo dnf install ansible
+ansible-playbook -i hosts workstation.yml -c local
