@@ -7,7 +7,8 @@
   roles:
 
     - common       # List of essential packages
-    - design        # Design pack
+    - users
+    - design       # Design pack
     - latex        # Latex and ide texmaker
     - composer
     - nodejs
