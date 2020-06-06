@@ -55,5 +55,14 @@
       - gnome-shell-extension-system-monitor-applet
       - gnome-shell-extension-topicons-plus
       - gnome-shell-theme-yaru
+      - libwebp-tools
     state: latest
+
+- name: Install webp thumbnailer
+  template:
+    src: webp.thumbnailer
+    dest: /usr/share/thumbnailers/
+    owner: root
+    group: root
+    mode: '0644'
 
