@@ -1,6 +1,0 @@
----
-
-- name: Atom | Install lists packages
-  dnf: name={{ item }} state=installed
-  with_items:
-    - https://github.com/atom/atom/releases/download/v1.7.3/atom.x86_64.rpm

@@ -1,7 +1,13 @@
 ---
 
-- name: Node.js | Add repository for package
-  apt_repository: repo='ppa:chris-lea/node.js' state=present update_cache=yes
+- name: Node.js
+  dnf:
+    name:
+      - nodejs
+    state: latest
 
-- name: Node.js | Install package
-  apt: pkg=nodejs state=present
+- name: Yarn
+  dnf:
+    name:
+      - yarnpkg
+    state: latest

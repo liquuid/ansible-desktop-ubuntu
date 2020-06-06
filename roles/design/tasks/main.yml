@@ -7,8 +7,8 @@
   dnf: pkg=scribus state=present
 
 - name: Gimp | Install package
-  dnf: name={{ item }} state=installed
-  with_items:
+  dnf:
+    name:
       - gimp
       - gimp-elsamuko
       - gimp-lensfun
@@ -19,13 +19,20 @@
       - gimp-paint-studio
       - gimp-help-pt_BR
       - gimp-fourier-plugin
-
+    state: latest
 
 - name: Inkscape | Install package
-  dnf: name={{ item }} state=present
-  with_items:
+  dnf:
+    name:
       - inkscape
       - inkscape-psd
-      - inkscape-table
-      - inkscape-sozi
       - inkscape-view
+    state: latest
+
+- name: Apps multimedia
+  dnf:
+    name: 
+      - blender
+      - kdenlive
+      - obs-studio
+    state: latest

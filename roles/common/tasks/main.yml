@@ -1,27 +1,41 @@
 ---
-
 - name: Package | Install lists packages
-  dnf: name={{ item }} state=installed
-  with_items:
-    - bash-completion
-    - openssh-server
-    - vim
-    - git
-    - NetworkManager-tui
-    - unar
-    - htop
-    - tree
-    - dstat
-    - screen
-    - curl
-    - wget
-    - ccze
-    - tmux
-    - terminator
-    - tig
-    - unzip
-    - libselinux-python
-    - http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-23.noarch.rpm
-    - http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-23.noarch.rpm
-    - gnome-tweak-tool
+  dnf:
+    name:
+      - http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-32.noarch.rpm
+      - http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-32.noarch.rpm
+      - zsh
+      - geary
+      - bash-completion
+      - openssh-server
+      - vim
+      - git
+      - NetworkManager-tui
+      - unar
+      - htop
+      - tree
+      - dstat
+      - screen
+      - curl
+      - wget
+      - ccze
+      - tmux
+      - terminator
+      - tig
+      - unzip
+      - neofetch
+      - iotop
+      - pciutils
+      - usbutils
+      - nmap
+      - youtube-dl
+      - squashfs-tools
+      - shntool
+      - unrar
+      - p7zip
+      - mc
+      - nnn
+      - sshfs
+      - gnome-tweak-tool
+    state: latest
 

@@ -1,32 +1,29 @@
 ---
-#- name: VirtualBox | Install virtualbox repo
-#  get_url: url=http://download.virtualbox.org/virtualbox/rpm/fedora/virtualbox.repo dest=/etc/yum.repos.d/virtualbox.repo
-
-#- name: VirtualBox | Install virtualbox
-#  dnf: name={{ item }} enablerepo=virtualbox disable_gpg_check=yes state=latest
-#  with_items:
-#    - VirtualBox
-#    - python-VirtualBox
 
 - name: Virtualization | Install lists packages
-  dnf: name={{ item }} state=latest
-  with_items:
-    - VirtualBox
-    - python-VirtualBox
-    - vagrant
-    - libvirt-daemon-vbox
-    - docker-vim
-    - docker-selinux
-    - docker
-    - binutils
-    - gcc
-    - make
-    - patch
-    - libgomp
-    - glibc-headers
-    - glibc-devel
-    - kernel-headers
-    - kernel-devel
-    - dkms
+  dnf:
+    name:
+      - VirtualBox
+      - python-VirtualBox
+      - vagrant
+      - libvirt-daemon-vbox
+      - docker-vim
+      - docker-selinux
+      - docker
+      - docker-compose
+      - podman
+      - binutils
+      - gcc
+      - make
+      - cmake
+      - go
+      - patch
+      - libgomp
+      - glibc-headers
+      - glibc-devel
+      - kernel-headers
+      - kernel-devel
+      - dkms
+    state: latest
 
 

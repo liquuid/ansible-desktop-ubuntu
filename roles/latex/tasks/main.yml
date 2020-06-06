@@ -1,11 +1,12 @@
 ---
 
 - name: LATEX | Install package
-  apt: pkg={{ item }} state=present
-  with_items:
-    - texmaker
-    - texlive
-    - texlive-latex3
-    - texlive-latex-extra
-    - texlive-lang-french
-    - texlive-full
+  dnf:
+    name:
+      - texmaker
+      - texlive-scheme-basic
+      - texlive
+      - texlive-collection-langportuguese
+      - texlive-collection-latex
+      - texlive-collection-latexextra
+    state: latest

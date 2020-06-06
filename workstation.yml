@@ -1,30 +1,17 @@
 ---
 
 - hosts: local
-  user: liquuid
-  sudo: yes
-
   vars_files:
     - group_vars/all.yml
 
   roles:
     - common       # List of essential packages
-    - vim          # Configuration for vim
     - design        # Design pack
-#    - latex        # Latex and ide texmaker
-#    - nvidia       # Drivers owner
-#    - hhvm         # Fork PHP
-    - web
-#    - mongodb
+    - latex        # Latex and ide texmaker
     - composer
-#    - nodejs
-#    - dotfile
-#    - conky
-#    - synapse      # Launcher apps.
-    - google-chrome
+    - nodejs
+    - browsers
     - multimedia
-    - atom
     - virtualization
-    - skype
-    - dropbox
-#   - android
+    - dev
+

@@ -1,0 +1,69 @@
+---
+
+- name: Install "phpstorm" with option --classic
+  snap:
+    name: phpstorm
+    classic: yes
+
+- name: Install "goland" with option --classic
+  snap:
+    name: goland
+    classic: yes
+
+- name: Install "webstorm" with option --classic
+  snap:
+    name: webstorm
+    classic: yes
+
+- name: Install "pycharm-professional" with option --classic
+    snap:
+        name: pycharm-professional
+        classic: yes
+
+- name: Install "insomnia" 
+    snap:
+        name: insomnia
+
+- name: Install "postbird" 
+    snap:
+        name: postbird        
+
+
+- rpm_key:
+  state: present
+  key: https://packages.microsoft.com/keys/microsoft.asc
+
+- name: Add repository
+  yum_repository:
+    name: vscode
+    description: vscode repo
+    baseurl: https://packages.microsoft.com/yumrepos/vscode
+    enabled: yes
+
+- name: VSCode
+    dnf: pkg=code state=latest
+
+- name: Install "codeblocks"
+  dnf:
+    name: codeblocks
+
+
+- name: Install "anjuta"
+  dnf:
+    name: anjuta
+
+- name: Install "arduino"
+    dnf:
+      name: arduino
+
+- name: Install "micro"
+  dnf:
+    name: micro
+
+- name: Install "zeal"
+  dnf:
+    name: zeal
+
+- name: Install "zeal"
+    dnf:
+      name: zeal

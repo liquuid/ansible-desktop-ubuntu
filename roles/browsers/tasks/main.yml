@@ -1,0 +1,18 @@
+---
+
+- name: Google Chrome | Install lists packages
+  dnf: name=https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm state=installed
+
+- name: Add Brave repo
+  become: yes
+  yum_repository:
+    name: Brave
+    description: Brave YUM repo
+    baseurl: https://brave-browser-rpm-release.s3.brave.com/x86_64/
+    gpgkey: https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
+
+- name: Install Brave
+  become: yes
+  dnf:
+    name: brave-browser
+    state: latest
