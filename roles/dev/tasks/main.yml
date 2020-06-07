@@ -1,4 +1,17 @@
 ---
+- name: Install "Snap"
+  dnf: name=snapd state=latest 
+
+- name: Enable "Snap"
+  service: name=snapd state=started enabled=yes
+
+- name: Create "snap" symlink
+  file:
+    src:  /var/lib/snapd/snap
+    dest: /snap
+    owner: root
+    state: link
+
 
 - name: Install "phpstorm" with option --classic
   snap:

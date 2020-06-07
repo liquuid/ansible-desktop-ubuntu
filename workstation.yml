@@ -7,7 +7,6 @@
   roles:
 
     - common       # List of essential packages
-    - users
     - design       # Design pack
     - latex        # Latex and ide texmaker
     - composer
@@ -16,5 +15,4 @@
     - dev
     - multimedia
     - virtualization
-   
-
+    - users
