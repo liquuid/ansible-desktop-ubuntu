@@ -63,6 +63,9 @@
       - gnome-shell-extension-topicons-plus
       - gnome-shell-theme-yaru
       - libwebp-tools
+      - pdf2djvu
+      - poppler-utils
+      - ImageMagick 
     state: latest
 
 - name: Install webp thumbnailer
