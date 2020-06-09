@@ -1,4 +1,26 @@
 ---
+- name: Install X11 libs
+  dnf:
+    name:
+      - libX11-devel
+      - libXcursor-devel 
+      - libXrandr-devel
+      - libXinerama-devel
+      - libXi-devel
+      - mesa-libGL-devel
+      - gcc-c++
+      - SDL2_gfx-devel
+      - SDL2_image-devel
+      - SDL2_mixer-devel
+      - SDL2_ttf-devel
+      - SDL2-devel
+      - libXxf86vm-devel
+      - intltool
+      - glib-devel
+      - glib2-devel
+      - libtool
+    state: installed
+
 - name: Install "Snap"
   dnf: name=snapd state=latest 
 
@@ -21,6 +43,12 @@
 - name: Install "goland" with option --classic
   snap:
     name: goland
+    classic: yes
+
+
+- name: Install "clion" with option --classic
+  snap:
+    name: clion
     classic: yes
 
 - name: Install "webstorm" with option --classic
@@ -77,6 +105,3 @@
   dnf:
     name: zeal
 
-- name: Install "zeal"
-  dnf:
-    name: zeal
