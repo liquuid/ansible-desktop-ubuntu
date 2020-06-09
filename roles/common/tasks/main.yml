@@ -65,8 +65,9 @@
       - libwebp-tools
       - pdf2djvu
       - poppler-utils
-      - ImageMagick 
-    state: latest
+      - ImageMagick
+
+    state: installed
 
 - name: Install webp thumbnailer
   template:
