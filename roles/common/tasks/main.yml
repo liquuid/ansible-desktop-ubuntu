@@ -66,6 +66,7 @@
       - pdf2djvu
       - poppler-utils
       - ImageMagick
+      - xclip
 
     state: installed
 
