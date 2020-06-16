@@ -1,4 +1,7 @@
 ---
+- name: Setup SSHD
+  service: name=sshd state=started enabled=yes
+
 - name: Install RPMfusion free
   dnf: name=http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-32.noarch.rpm state=latest
 
@@ -67,6 +70,7 @@
       - poppler-utils
       - ImageMagick
       - xclip
+      - libreoffice-langpack-pt-BR
 
     state: installed
 
