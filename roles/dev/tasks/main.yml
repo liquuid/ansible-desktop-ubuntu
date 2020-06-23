@@ -19,6 +19,7 @@
       - glib-devel
       - glib2-devel
       - libtool
+      - fira-code-fonts
     state: installed
 
 - name: Install "Snap"
@@ -61,9 +62,10 @@
     name: pycharm-professional
     classic: yes
 
-- name: Install "insomnia" 
+- name: remove "insomnia" 
   snap:
     name: insomnia
+    state: absent
 
 - name: Install "postbird" 
   snap:
