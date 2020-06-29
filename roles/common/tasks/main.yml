@@ -71,6 +71,7 @@
       - ImageMagick
       - xclip
       - libreoffice-langpack-pt-BR
+      - compsize
 
     state: installed
 

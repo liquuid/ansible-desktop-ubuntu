@@ -1,0 +1,26 @@
+---
+
+- name: Install Awesome WM
+  dnf:
+    name: awesome
+    state: present
+
+- name: Install Minimal Tools
+  dnf:
+    name:
+      - arandr
+      - network-manager-applet
+      - nitrogen
+      - xfce4-power-manager
+      - blueberry
+      - mpv
+      - slim
+      - sakura
+      - dmenu
+      - rofi
+      - surf
+      - vifm
+      - cmus
+      - lynx
+      - pcmanfm
+      - krusader
