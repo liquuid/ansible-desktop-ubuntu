@@ -1,7 +1,10 @@
 ---
 
 - name: Google Chrome | Install lists packages
-  dnf: name=https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm state=installed
+  dnf:
+    name: https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm
+    state: installed
+    disable_gpg_check: yes
 
 - name: Add Brave repo
   become: yes

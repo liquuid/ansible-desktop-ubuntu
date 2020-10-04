@@ -3,17 +3,16 @@
   service: name=sshd state=started enabled=yes
 
 - name: Install RPMfusion free
-  dnf: name=http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-32.noarch.rpm state=latest
+  dnf: name=https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-branched.noarch.rpm state=latest disable_gpg_check=yes
 
 - name: Install RPMfusion nonfree
-  dnf: name=http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-32.noarch.rpm state=latest
+  dnf: name=https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-branched.noarch.rpm state=latest disable_gpg_check=yes
+
 
 
 - name: Package | Install lists packages
   dnf:
     name:
-      - http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-32.noarch.rpm
-      - http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-32.noarch.rpm
       - zsh
       - geary
       - bash-completion
