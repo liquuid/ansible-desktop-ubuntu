@@ -71,6 +71,7 @@
       - xclip
       - libreoffice-langpack-pt-BR
       - compsize
+      - foliate
 
     state: installed
 
