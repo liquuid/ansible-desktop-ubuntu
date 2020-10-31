@@ -1,7 +1,7 @@
 ---
 
 - name: Composer
-  dnf:
+  apt:
     name:
       - composer
 

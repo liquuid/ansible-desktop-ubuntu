@@ -1,11 +1,11 @@
 ---
 
 - name: Package | Install lists packages
-  dnf:
+  apt:
     name:
       - mpv
-      - webp-pixbuf-loader
-      - libwebp
+        #- webp-pixbuf-loader
+      - webp
       - gthumb
       - lmms
       - ffmpeg
@@ -15,11 +15,10 @@
       - transmission
       - clementine
       - pitivi
-      - gstreamer1-plugin-openh264
-      - gstreamer1-plugins-bad-free-extras
-      - gstreamer1-plugins-bad-freeworld
-      - gstreamer1-plugins-good-extras
-      - gstreamer1-plugins-ugly
-      - gstreamer1-vaapi
-      - PackageKit-gstreamer-plugin
+        #- gstreamer1-plugin-openh264
+        #- gstreamer1-plugins-bad-free-extras
+        #- gstreamer1-plugins-bad-freeworld
+        #- gstreamer1-plugins-good-extras
+        #- gstreamer1-plugins-ugly
+        #- gstreamer1-vaapi
     state: latest

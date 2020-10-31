@@ -11,7 +11,7 @@
     - latex        # Latex and ide texmaker
     - composer
     - nodejs
-    - browsers
+    #- browsers
     - dev
     - multimedia
     - virtualization

@@ -1,12 +1,8 @@
 ---
 
 - name: LATEX | Install package
-  dnf:
+  apt:
     name:
       - texmaker
-      - texlive-scheme-basic
       - texlive
-      - texlive-collection-langportuguese
-      - texlive-collection-latex
-      - texlive-collection-latexextra
     state: latest

@@ -1,39 +1,38 @@
 ---
 - name: Install X11 libs
-  dnf:
+  apt:
     name:
-      - libX11-devel
-      - libXcursor-devel 
-      - libXrandr-devel
-      - libXinerama-devel
-      - libXi-devel
-      - mesa-libGL-devel
-      - gcc-c++
-      - SDL2_gfx-devel
-      - SDL2_image-devel
-      - SDL2_mixer-devel
-      - SDL2_ttf-devel
-      - SDL2-devel
-      - libXxf86vm-devel
+      - libx11-dev
+      - libxcursor-dev 
+      - libxrandr-dev
+      - libxinerama-dev
+      - libxi-dev
+      - libgl1-mesa-dev
+      - g++
+      - libsdl2-gfx-dev
+      - libsdl2-image-dev
+      - libsdl2-mixer-dev
+      - libsdl2-ttf-dev
+      - libsdl2-dev
+      - libxxf86vm-dev
       - intltool
-      - glib-devel
-      - glib2-devel
+      - libglib2.0-dev
       - libtool
-      - fira-code-fonts
-    state: installed
+      - fonts-firacode
+    state: present
 
 - name: Install "Snap"
-  dnf: name=snapd state=latest 
+  apt: name=snapd state=latest 
 
 - name: Enable "Snap"
   service: name=snapd state=started enabled=yes
 
-- name: Create "snap" symlink
-  file:
-    src:  /var/lib/snapd/snap
-    dest: /snap
-    owner: root
-    state: link
+  #- name: Create "snap" symlink
+  #file:
+  #  src:  /var/lib/snapd/snap
+  #  dest: /snap
+  #  owner: root
+  #  state: link
 
 
 - name: Install "phpstorm" with option --classic
@@ -62,6 +61,11 @@
     name: pycharm-professional
     classic: yes
 
+- name: Install "vscode" with option --classic
+  snap:
+    name: code
+    classic: yes
+
 - name: remove "insomnia" 
   snap:
     name: insomnia
@@ -71,39 +75,24 @@
   snap:
     name: postbird        
 
-- name: Add MS keys
-  rpm_key:
-    state: present
-    key: https://packages.microsoft.com/keys/microsoft.asc
-
-- name: Add repository
-  yum_repository:
-    name: vscode
-    description: vscode repo
-    baseurl: https://packages.microsoft.com/yumrepos/vscode
-    enabled: yes
-
-- name: VSCode
-  dnf: pkg=code state=latest
-
 - name: Install "codeblocks"
-  dnf:
+  apt:
     name: codeblocks
 
 
 - name: Install "anjuta"
-  dnf:
+  apt:
     name: anjuta
 
 - name: Install "arduino"
-  dnf:
+  apt:
     name: arduino
 
 - name: Install "micro"
-  dnf:
+  apt:
     name: micro
 
 - name: Install "zeal"
-  dnf:
+  apt:
     name: zeal
 

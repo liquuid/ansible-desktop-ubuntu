@@ -1,25 +1,15 @@
 ---
-- name: Setup SSHD
-  service: name=sshd state=started enabled=yes
-
-- name: Install RPMfusion free
-  dnf: name=https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-branched.noarch.rpm state=latest disable_gpg_check=yes
-
-- name: Install RPMfusion nonfree
-  dnf: name=https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-branched.noarch.rpm state=latest disable_gpg_check=yes
-
-
 
 - name: Package | Install lists packages
-  dnf:
+  apt:
     name:
+      - openssh-server
       - zsh
       - geary
       - bash-completion
       - openssh-server
       - vim
       - git
-      - NetworkManager-tui
       - unar
       - htop
       - tree
@@ -46,34 +36,19 @@
       - nnn
       - sshfs
       - gnome-tweak-tool
-      - util-linux-user
       - qt5ct
-      - yaru-theme
-      - ubuntu-title-fonts
-      - gnome-shell-extension-netspeed
-      - gnome-shell-theme-selene
       - chrome-gnome-shell
-      - gnome-shell-extension-appindicator
-      - gnome-shell-extension-desktop-icons
-      - gnome-shell-extension-dash-to-dock
-      - gnome-shell-extension-freon
-      - gnome-shell-extension-gamemode
-      - gnome-shell-extension-gsconnect
-      - gnome-shell-extension-media-player-indicator
-      - gnome-shell-extension-pomodoro
-      - gnome-shell-extension-system-monitor-applet
-      - gnome-shell-extension-topicons-plus
-      - gnome-shell-theme-yaru
-      - libwebp-tools
+      - webp
       - pdf2djvu
       - poppler-utils
-      - ImageMagick
+      - imagemagick
       - xclip
-      - libreoffice-langpack-pt-BR
-      - compsize
-      - foliate
 
-    state: installed
+    state: present
+
+- name: Setup SSHD
+  service: name=sshd state=started enabled=yes
+
 
 - name: Install webp thumbnailer
   template:
