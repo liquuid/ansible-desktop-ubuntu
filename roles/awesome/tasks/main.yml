@@ -15,6 +15,7 @@
       - mpv
       - slim
       - sakura
+      - terminator
       - dmenu
       - rofi
       - surf

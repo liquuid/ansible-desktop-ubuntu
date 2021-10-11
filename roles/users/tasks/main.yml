@@ -4,8 +4,9 @@
     name: liquuid
     comment: liquuid
     uid: 1000
-    groups: wheel, docker, vboxusers, libvirt, kvm
+    groups: sudo, docker, vboxusers, libvirt, kvm
     append: yes
+    shell: /usr/bin/zsh
 
 - name: Add the user 'gu' 
   user:

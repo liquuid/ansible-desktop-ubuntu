@@ -36,53 +36,58 @@
 
 
 - name: Install "phpstorm" with option --classic
-  snap:
+  community.general.snap:
     name: phpstorm
     classic: yes
 
 - name: Install "goland" with option --classic
-  snap:
+  community.general.snap:
     name: goland
     classic: yes
 
 
 - name: Install "clion" with option --classic
-  snap:
+  community.general.snap:
     name: clion
     classic: yes
 
 - name: Install "webstorm" with option --classic
-  snap:
+  community.general.snap:
     name: webstorm
     classic: yes
 
 - name: Install "pycharm-professional" with option --classic
-  snap:
+  community.general.snap:
     name: pycharm-professional
     classic: yes
 
 - name: Install "vscode" with option --classic
-  snap:
+  community.general.snap:
     name: code
     classic: yes
 
-- name: remove "insomnia" 
-  snap:
+- name: install "insomnia" 
+  community.general.snap:
     name: insomnia
-    state: absent
+    state: present
 
 - name: Install "postbird" 
-  snap:
-    name: postbird        
+  community.general.snap:
+    name: postbird
+
+- name: Install "dbeaver" 
+  community.general.snap:
+    name: dbeaver-ce       
 
 - name: Install "codeblocks"
   apt:
     name: codeblocks
-
+    state: absent
 
 - name: Install "anjuta"
   apt:
     name: anjuta
+    state: absent
 
 - name: Install "arduino"
   apt:

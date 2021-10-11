@@ -13,6 +13,8 @@
       - cmake
       - golang-go
       - patch
+      - gnome-boxes
+      - virt-manager
     state: latest
 
 - name: Enable docker

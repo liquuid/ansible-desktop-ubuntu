@@ -1,8 +1,13 @@
 ---
+- name: Set timezone America/Sao_Paulo
+  timezone:
+    name: America/Sao_Paulo
+
 
 - name: Package | Install lists packages
   apt:
     name:
+      - flatpak
       - openssh-server
       - zsh
       - geary
@@ -35,7 +40,6 @@
       - mc
       - nnn
       - sshfs
-      - gnome-tweak-tool
       - qt5ct
       - chrome-gnome-shell
       - webp
@@ -43,12 +47,23 @@
       - poppler-utils
       - imagemagick
       - xclip
-
+      - xsel
+      - syncthing
+      - syncthing-gtk
+      - ubuntu-restricted-extras
     state: present
 
 - name: Setup SSHD
   service: name=sshd state=started enabled=yes
 
+- name: enable flatpak
+  become: true
+  shell: flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+
+- name: install Telegram
+  become: true
+  shell: flatpak install org.telegram.desktop -y
+    
 
 - name: Install webp thumbnailer
   template:
