@@ -27,62 +27,33 @@
 - name: Enable "Snap"
   service: name=snapd state=started enabled=yes
 
-  #- name: Create "snap" symlink
-  #file:
-  #  src:  /var/lib/snapd/snap
-  #  dest: /snap
-  #  owner: root
-  #  state: link
-
-
-#- name: Install "phpstorm" with option --classic
-#  snap:
-#    name: phpstorm
-#    classic: yes
-
-#- name: Install "goland" with option --classic
-#  snap:
-#    name: goland
-#    classic: yes
-
-
 - name: Install "Android Studio" with option --classic
   snap:
     name: android-studio
     classic: yes
 
-#- name: Install "webstorm" with option --classic
-#  snap:
-#    name: webstorm
-#    classic: yes
-
 - name: Install "pycharm-professional" with option --classic
-  snap:
+  community.general.snap:
     name: pycharm-professional
     classic: yes
 
 - name: Install "vscode" with option --classic
-  snap:
+  community.general.snap:
     name: code
     classic: yes
 
-- name: remove "insomnia" 
-  snap:
+- name: install "insomnia" 
+  community.general.snap:
     name: insomnia
-    state: absent
+    state: present
 
 - name: Install "postbird" 
-  snap:
-    name: postbird        
+  community.general.snap:
+    name: postbird
 
-#- name: Install "codeblocks"
-#  apt:
-#    name: codeblocks
-
-
-#- name: Install "anjuta"
-#  apt:
-#    name: anjuta
+- name: Install "dbeaver" 
+  community.general.snap:
+    name: dbeaver-ce       
 
 - name: Install "arduino"
   apt:

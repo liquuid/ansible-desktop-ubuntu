@@ -15,5 +15,7 @@
     - dev
     - multimedia
     - virtualization
-    #- users
+    - users
     - awesome
+    #- filesharing
+    - games

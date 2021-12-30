@@ -1,0 +1,7 @@
+- name: Create a share named storage
+  community.general.udm_share:
+    name: storage
+    path: /storage
+    host: hydra
+    #writable: no
+    sambaName: Storage
