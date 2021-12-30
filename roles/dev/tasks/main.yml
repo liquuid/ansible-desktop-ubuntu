@@ -35,26 +35,26 @@
   #  state: link
 
 
-- name: Install "phpstorm" with option --classic
+#- name: Install "phpstorm" with option --classic
+#  snap:
+#    name: phpstorm
+#    classic: yes
+
+#- name: Install "goland" with option --classic
+#  snap:
+#    name: goland
+#    classic: yes
+
+
+- name: Install "Android Studio" with option --classic
   snap:
-    name: phpstorm
+    name: android-studio
     classic: yes
 
-- name: Install "goland" with option --classic
-  snap:
-    name: goland
-    classic: yes
-
-
-- name: Install "clion" with option --classic
-  snap:
-    name: clion
-    classic: yes
-
-- name: Install "webstorm" with option --classic
-  snap:
-    name: webstorm
-    classic: yes
+#- name: Install "webstorm" with option --classic
+#  snap:
+#    name: webstorm
+#    classic: yes
 
 - name: Install "pycharm-professional" with option --classic
   snap:
@@ -75,14 +75,14 @@
   snap:
     name: postbird        
 
-- name: Install "codeblocks"
-  apt:
-    name: codeblocks
+#- name: Install "codeblocks"
+#  apt:
+#    name: codeblocks
 
 
-- name: Install "anjuta"
-  apt:
-    name: anjuta
+#- name: Install "anjuta"
+#  apt:
+#    name: anjuta
 
 - name: Install "arduino"
   apt:
