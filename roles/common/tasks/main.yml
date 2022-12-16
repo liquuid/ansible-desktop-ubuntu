@@ -43,6 +43,7 @@
       - qt5ct
       - chrome-gnome-shell
       - webp
+      - gnome-tweaks
       - pdf2djvu
       - poppler-utils
       - imagemagick

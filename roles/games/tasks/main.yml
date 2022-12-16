@@ -1,29 +1,9 @@
 ---
-- name: Add gpg key to Yarn
-  shell: curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add 
-
-- name: Add Yarn repo
-  shell: echo "deb https://dl.yarnpkg.com/debian/ stable main" > /etc/apt/sources.list.d/yarn.list
-
-  #- name: Add gpg key to Node
-
-  #- name: Node.js
-  #apt:
-  #  name:
-  #    - nodejs
-  #  state: latest
-  #  update_cache: yes
-
-    #- name: ZSNES
-    #apt:
-    #name:
-    #  - zsnes
-    #state: latest
-
 - name: dolphin emu
-  apt:
-    name:
-      - dolphin-emu
-    state: latest
+  shell: flatpak install org.DolphinEmu.dolphin-emu -y
 
+- name: citra emu
+  shell: flatpak install org.citra_emu.citra -y
 
+- name: yuzu emu
+  shell: flatpak install org.yuzu_emu.yuzu -y

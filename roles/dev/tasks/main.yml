@@ -19,6 +19,13 @@
       - libglib2.0-dev
       - libtool
       - fonts-firacode
+      - fritzing
+      - openscad
+      - prusa-slicer
+      - cura
+      - sigrok-cli
+      - pulseview
+      
     state: present
 
 - name: Install "Snap"
@@ -36,6 +43,23 @@
   community.general.snap:
     name: pycharm-professional
     classic: yes
+
+- name: Install "lens" with option --classic
+  community.general.snap:
+    name: kontena-lens
+    classic: yes
+
+- name: Install "qcus" with option --classic
+  community.general.snap:
+    name: qucs-spice
+    classic: yes
+
+
+- name: Install "logisim" with option --classic
+  community.general.snap:
+    name: logisim-evolution-snapcraft 
+    classic: yes
+
 
 - name: Install "vscode" with option --classic
   community.general.snap:
