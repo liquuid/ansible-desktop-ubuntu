@@ -52,6 +52,8 @@
       - syncthing
       - syncthing-gtk
       - ubuntu-restricted-extras
+      - nautilus-nextcloud
+      - nextcloud-desktop
     state: present
 
 - name: Setup SSHD

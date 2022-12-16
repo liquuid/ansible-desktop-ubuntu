@@ -44,6 +44,12 @@
     name: pycharm-professional
     classic: yes
 
+- name: Install "goland" with option --classic
+  community.general.snap:
+    name: goland
+    classic: yes
+
+
 - name: Install "lens" with option --classic
   community.general.snap:
     name: kontena-lens
