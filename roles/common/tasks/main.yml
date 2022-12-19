@@ -7,6 +7,7 @@
 - name: Package | Install lists packages
   apt:
     name:
+      - zfsutils-linux
       - flatpak
       - openssh-server
       - zsh
