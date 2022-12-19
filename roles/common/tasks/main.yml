@@ -54,6 +54,7 @@
       - ubuntu-restricted-extras
       - nautilus-nextcloud
       - nextcloud-desktop
+      - filezilla
     state: present
 
 - name: Setup SSHD
