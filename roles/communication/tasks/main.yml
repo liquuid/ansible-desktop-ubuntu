@@ -11,8 +11,14 @@
     name: slack
     classic: yes
 
-- name: Install Discord
+- name: Uninstall Discord Snap
   community.general.snap:
     name: discord
     classic: yes
+    state: absent
+
+- name: Install Discord
+  apt:
+    deb: https://dl.discordapp.net/apps/linux/0.0.22/discord-0.0.22.deb
+    state: present
 

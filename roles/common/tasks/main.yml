@@ -56,7 +56,13 @@
       - nautilus-nextcloud
       - nextcloud-desktop
       - filezilla
+      - sshpass
+
     state: present
+      
+- name: Install rescue time
+  apt:
+    deb: https://www.rescuetime.com/installers/rescuetime_current_amd64.deb
 
 - name: Setup SSHD
   service: name=sshd state=started enabled=yes

@@ -25,6 +25,7 @@
       - cura
       - sigrok-cli
       - pulseview
+      - cargo
       
     state: present
 

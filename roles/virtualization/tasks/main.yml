@@ -1,10 +1,13 @@
 ---
-
-- name: Virtualization | Install lists packages
+- name: remove stuff
   apt:
     name:
       - virtualbox
       - vagrant
+
+- name: Virtualization | Install lists packages
+  apt:
+    name:
       - docker
       - docker-compose
       - binutils
@@ -15,6 +18,14 @@
       - patch
       - gnome-boxes
       - virt-manager
+      - cockpit
+      - cockpit-machines
+      - cockpit-bridge
+      - cockpit-networkmanager
+      - cockpit-packagekit
+      - cockpit-system
+      - cockpit-podman
+      - cockpit-storaged
     state: latest
 
 - name: Enable docker
