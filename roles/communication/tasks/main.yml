@@ -1,6 +1,6 @@
 ---
-- name: Install Teams
-  shell: flatpak install com.microsoft.Teams -y
+- name: uninstall Teams
+  shell: flatpak remove com.microsoft.Teams -y
 
 - name: Install Anydesk
   shell: flatpak install com.anydesk.Anydesk -y
