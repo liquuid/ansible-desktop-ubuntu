@@ -1,12 +1,41 @@
 ---
+- name: check packages
+  package_facts:
+    manager: auto
+
 - name: Add the user 'liquuid' 
   user:
     name: liquuid
     comment: liquuid
     uid: 1000
-    groups: sudo, docker, vboxusers, libvirt, kvm
+    groups: sudo, kvm
     append: yes
     shell: /usr/bin/zsh
+
+
+- name: Add the user 'liquuid' to vboxusers
+  user:
+    name: liquuid
+    comment: liquuid
+    groups: vboxusers
+    append: yes
+  when: "'virtualbox' in ansible_facts.packages"
+
+- name: Add the user 'liquuid' to docker
+  user:
+    name: liquuid
+    comment: liquuid
+    groups: docker
+    append: yes
+  when: "'docker' in ansible_facts.packages"
+
+- name: Add the user 'liquuid' to libvirt
+  user:
+    name: liquuid
+    comment: liquuid
+    groups: libvirt
+    append: yes
+  when: "'libvirt-daemon' in ansible_facts.packages"
 
 - name: Add the user 'gu' 
   user:
@@ -15,4 +44,5 @@
     uid: 1001
     groups: docker
     append: yes
+  when: "'docker' in ansible_facts.packages"
 

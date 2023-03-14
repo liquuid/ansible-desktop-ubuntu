@@ -7,7 +7,7 @@
 - name: Package | Install lists packages
   apt:
     name:
-      - zfsutils-linux
+      #- zfsutils-linux
       - flatpak
       - openssh-server
       - zsh
@@ -59,6 +59,7 @@
       - sshpass
 
     state: present
+    update_cache: yes
       
 - name: Install rescue time
   apt:

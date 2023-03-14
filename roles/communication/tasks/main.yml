@@ -1,21 +1,22 @@
 ---
 - name: uninstall Teams
   shell: flatpak remove com.microsoft.Teams -y
+  ignore_errors: yes
 
 - name: Install Anydesk
   shell: flatpak install com.anydesk.Anydesk -y
-
 
 - name: Install Slack
   community.general.snap:
     name: slack
     classic: yes
-
+    
 - name: Uninstall Discord Snap
   community.general.snap:
     name: discord
     classic: yes
     state: absent
+  ignore_errors: yes
 
 - name: Install Discord
   apt:
